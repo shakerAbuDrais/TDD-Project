@@ -1,11 +1,14 @@
+# frozen_string_literal: true
+
+# This solves certain problems
 class Solver
-  def factorial(n)
-    if n < 0
-      raise "Factorial is only defined for positive integers"
-    elsif n == 0
+  def factorial(num)
+    if num.negative?
+      raise 'Factorial is only defined for positive integers'
+    elsif num.zero?
       1
     else
-      (1..n).inject(:*)
+      (1..num).inject(:*)
     end
   end
 
@@ -13,15 +16,15 @@ class Solver
     word.reverse
   end
 
-  def fizzbuzz(n)
-    if n % 3 == 0 && n % 5 == 0
-      "fizzbuzz"
-    elsif n % 3 == 0
-      "fizz"
-    elsif n % 5 == 0
-      "buzz"
+  def fizzbuzz(num)
+    if (num % 3).zero? && (num % 5).zero?
+      'fizzbuzz'
+    elsif (num % 3).zero?
+      'fizz'
+    elsif (num % 5).zero?
+      'buzz'
     else
-      n.to_s
+      num.to_s
     end
   end
 end
